@@ -3,4 +3,8 @@ resource "aws_vpc" "main" {
 
   enable_dns_hostnames = false
   enable_dns_support   = true
+
+  tags = {
+    Name = var.env_name
+  }
 }
