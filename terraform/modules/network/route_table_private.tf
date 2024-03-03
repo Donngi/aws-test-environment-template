@@ -11,8 +11,8 @@ resource "aws_route_table" "private" {
   dynamic "route" {
     for_each = var.need_nat_gateway ? ["dummy_value"] : []
     content {
-      cidr_block = "0.0.0.0/0"
-      gateway_id = aws_nat_gateway.main[count.index].id
+      cidr_block     = "0.0.0.0/0"
+      nat_gateway_id = aws_nat_gateway.main[count.index].id
     }
   }
 
