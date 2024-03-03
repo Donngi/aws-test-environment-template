@@ -8,6 +8,6 @@ resource "aws_subnet" "private" {
   cidr_block = cidrsubnet(aws_vpc.main.cidr_block, 3, count.index * 2 + 1)
 
   tags = {
-    Name = "private-${data.aws_availability_zones.available.names[count.index]}"
+    Name = "${var.env_name}-private-${data.aws_availability_zones.available.names[count.index]}"
   }
 }
