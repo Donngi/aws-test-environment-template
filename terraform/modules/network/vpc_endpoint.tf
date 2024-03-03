@@ -8,7 +8,7 @@ resource "aws_vpc_endpoint" "s3" {
   vpc_endpoint_type = "Gateway"
 
   tags = {
-    Name = "${var.env_name}-s3"
+    Name = "vpce-${var.env_name}-s3"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_vpc_endpoint" "dynamodb" {
   vpc_endpoint_type = "Gateway"
 
   tags = {
-    Name = "${var.env_name}-dynamodb"
+    Name = "vpce-${var.env_name}-dynamodb"
   }
 }
 
@@ -47,6 +47,6 @@ resource "aws_vpc_endpoint" "interface" {
   private_dns_enabled = true
 
   tags = {
-    Name = "${var.env_name}-${each.value}"
+    Name = "vpce-${var.env_name}-${each.value}"
   }
 }

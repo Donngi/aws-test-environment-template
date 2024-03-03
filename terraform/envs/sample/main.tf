@@ -3,6 +3,6 @@ module "network" {
 
   env_name                         = "sample"
   vpc_cidr                         = "10.0.3.0/24"
-  need_nat_gateway                 = true
-  required_interface_vpc_endpoints = []
+  need_nat_gateway                 = false
+  required_interface_vpc_endpoints = ["ec2"]
 }
